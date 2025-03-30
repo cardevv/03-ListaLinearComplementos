@@ -122,30 +122,31 @@ void inserirElemento()
 
 void excluirElemento()
 {
-	int valor;
+	int nmrexcluir;
 
-	cout << "digite o valor a excluir: ";
-	cin >> valor;
-		
-	int pos = posicaoElemento(valor);
+	cout << " digite o numero a excluir" << endl;
+	cin >> nmrexcluir;
 
-		if (pos == -1) {
+	int pos = posicaoElemento(nmrexcluir);
 
-              cout <<"numero não existe na lista";
-			
+	if (pos == -1) {
+		cout << "numero não existe na lista";
+	}
+	else {
+		for ( int i = pos; i < nElementos; i++) {
 
+			lista[i] = lista[i + 1];
 
 
 		}
-		else {
-			 for (int i = pos; i < nElementos +1; i++){
-			     lista[i] = lista[i+1];
-			 }
-			 
-			 
-		}
-	nElementos--;
-		
+		nElementos--;
+		cout << "elemento excluido" << endl;
+	}
+
+
+
+
+
 	
 }
 
